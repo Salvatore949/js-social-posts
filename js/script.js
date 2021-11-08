@@ -4,15 +4,11 @@
 // foto profilo,
 // data,
 // testo del post,
-// immagine (non tutti i post devono avere una immagine,
+// immagine (non tutti i post devono avere una immagine, non inserisco l'immagine nella terza card")
+// Uso il ciclo for per analizzare le varie cards
+//Creo delle variabili
+// Attraverso l'innerHTML stampo in pagina le cards
 // numero di likes.
-// stabilisco che se i=2 la mainimage non verrà mostrata
-// - Prendendo come riferimento il layout di esempio presente nell’html, stampiamo i post del nostro feed.
-
-// - Rendiamo il tasto “Mi Piace” cliccabile con incremento del counter dei likes.
-// prendo i riferimenti di tutti i pulsanti Mi Piace in pagina (mi ritorna un array)
-// per ogni elemento nell'array => aggiungo listener sul click del pulsante 
-// nel listener incremento di 1 il numero di like del post
 
 var cards = [
 
@@ -31,8 +27,8 @@ var cards = [
         "author":"philip",
         "date":"8 mesi fa",
         "text": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "main_photo":"https://unsplash.it/600/300?image=171",
-        "photo_alt":"drops",
+        "main_photo":"img/nicolas-arnold--hcfzUuQ3uw-unsplash.jpg",
+        "photo_alt":"glass",
         "likes":"30"
     },
 
@@ -41,8 +37,8 @@ var cards = [
         "author":"Ilary",
         "date":"11 mesi fa",
         "text": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "main_photo":"https://unsplash.it/600/300?image=171",
-        "photo_alt":"drops",
+        "main_photo":"",
+        "photo_alt":"",
         "likes":"15"
     },
 
@@ -51,8 +47,8 @@ var cards = [
         "author":"Ilary",
         "date":"11 mesi fa",
         "text": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "main_photo":"https://unsplash.it/600/300?image=171",
-        "photo_alt":"drops",
+        "main_photo":"img/peter-thomas-j2bxM61qXQ4-unsplash.jpg",
+        "photo_alt":"land",
         "likes":"15"
     }
 
@@ -68,11 +64,6 @@ var cards = [
         let rappresentation = cards[i].main_photo;
         let want = cards[i].likes;
         let etitle = cards[i].photo_alt; 
-
-        if ( i === 2){
-            rappresentation = "";
-            etitle = "";
-        }
 
         document.querySelector('.post').innerHTML += `
         <div class="post__header">
